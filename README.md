@@ -1,1 +1,3 @@
-#FileUploadAPI
+#ImageManagerAPI
+
+Image Manager API
