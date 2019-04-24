@@ -1,0 +1,10 @@
+# API Name
+name: ImageManagerAPI
+# Server environment
+server:
+  port: 8082
+  # unit: Seconds
+  readTimeout: 10
+  writeTimeout: 10
+  # unit: MB
+  maxHeaderBytes: 1
