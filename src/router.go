@@ -9,6 +9,7 @@ var routes = Routes{
 	Route{"Index","GET","/v1", ReturnIndex},
 	Route{"GetAllImages", "GET", "/v1/image/all", ReturnAllImages},
 	Route{"GetSingleImage", "GET", "/v1/image/{id}", ReturnSingleImage},
+	Route{"PostSingleImage", "POST", "/v1/image/{id}", CreateSingleImage},
 }
 
 // GetRouter is to get all the routers which this API will serve

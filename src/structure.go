@@ -1,4 +1,4 @@
-package main 
+package main
 
 import (
 	"net/http"
@@ -6,11 +6,10 @@ import (
 
 // Image is the structure of a single image entry
 type Image struct {
-	Id int `json:Id`
-	Image string `json:Image`
-	Thumbnail string `json:Thumbnail`
-	Caption string `json:Caption`
-
+	ID        int    `json:"ID"`
+	Image     string `json:"Image"`
+	Thumbnail string `json:"Thumbnail"`
+	Caption   string `json:"Caption"`
 }
 
 // Images is the array of multiple Image
@@ -18,9 +17,9 @@ type Images []Image
 
 // Route is the structure of a single route
 type Route struct {
-	Name string
-	Method string
-	Pattern string
+	Name        string
+	Method      string
+	Pattern     string
 	HandlerFunc http.HandlerFunc
 }
 
