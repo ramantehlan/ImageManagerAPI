@@ -1,10 +1,16 @@
 # API Name
 name: ImageManagerAPI
-# Server environment
+# Log folder location ex:
+# Do add '/' in the end
+logAddr: log/
+# True if running in production
+# False if running in development
+production: false
+# Server config
 server:
   port: 8082
-  # unit: Seconds
+  # Unit: Seconds
   readTimeout: 10
   writeTimeout: 10
-  # unit: MB
+  # Unit: MB
   maxHeaderBytes: 1
