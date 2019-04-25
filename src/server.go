@@ -13,8 +13,12 @@ func main() {
 
 	// Load Config file
 	LoadConfig()
+	// To start the logger and define the default things
+	LoadLogger()
 
+	// Fetch routes
 	router := GetRouter()
+	// Configure the server
 	server := &http.Server{
 		Addr:           ":" + viper.GetString("server.port"),
 		Handler:        router,
@@ -23,7 +27,9 @@ func main() {
 		MaxHeaderBytes: viper.GetInt("server.maxHeaderBytes") << 20,
 	}
 
-	fmt.Println("ImageManagerAPI v1.0")
+	fmt.Println(viper.GetString("name"))
 	fmt.Println("Running server on: http://0.0.0.0:" + viper.GetString("server.port"))
+	fmt.Print("\n--LOG--\n\n")
+	Log("info", "Server started at port:"+viper.GetString("server.port"))
 	log.Fatal(server.ListenAndServe())
 }
