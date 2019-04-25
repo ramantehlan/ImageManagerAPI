@@ -31,5 +31,7 @@ func main() {
 	fmt.Println("Running server on: http://0.0.0.0:" + viper.GetString("server.port"))
 	fmt.Print("\n--LOG--\n\n")
 	Log("info", "Server started at port:"+viper.GetString("server.port"))
+	// Connect to DB
+	ConnectDB()
 	log.Fatal(server.ListenAndServe())
 }
