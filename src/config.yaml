@@ -6,6 +6,12 @@ logAddr: log/
 # True if running in production
 # False if running in development
 production: false
+# Database config
+database:
+  addr: 127.0.0.1
+  name: ImageManagerAPI
+  user: root
+  pass: 1234567890
 # Server config
 server:
   port: 8082
