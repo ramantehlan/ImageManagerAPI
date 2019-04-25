@@ -39,9 +39,7 @@ func LoadLogger() {
 
 // Log is to log according to the environment
 func Log(tag string, message string, fields ...log.Fields) {
-	field := log.Fields{
-		"method": tag,
-	}
+	field := log.Fields{}
 	if len(fields) > 0 {
 		field = fields[0]
 	}
