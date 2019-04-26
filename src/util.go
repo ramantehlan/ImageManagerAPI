@@ -1,6 +1,7 @@
 package main
 
 import (
+	"database/sql"
 	"os"
 )
 
@@ -19,5 +20,24 @@ func DirectoryExist(path string) bool {
 func EnsureDirectory(path string) {
 	if !DirectoryExist(path) {
 		os.Mkdir(path, os.ModePerm)
+	}
+}
+
+// EnsureAllDirectory is to make sure all the important paths exist
+func EnsureAllDirectory(dirs Dirs) {
+	for _, dir := range dirs {
+		EnsureDirectory(dir.path)
+	}
+}
+
+// ErrorHandler is to handle errors and log them
+func ErrorHandler(err error) {
+	if err != nil {
+		switch err {
+		case sql.ErrNoRows:
+			Log("warn", "No rows found in table")
+		default:
+			Log("error", err.Error())
+		}
 	}
 }
