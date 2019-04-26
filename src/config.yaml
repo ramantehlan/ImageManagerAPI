@@ -1,8 +1,11 @@
 # API Name
 name: ImageManagerAPI
-# Log folder location ex:
+# Log folder location
 # Do add '/' in the end
 logAddr: log/
+# Img folder location
+# Do add '/' in the end
+imgAddr: img/ 
 # True if running in production
 # False if running in development
 production: false
