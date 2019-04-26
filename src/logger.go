@@ -17,10 +17,9 @@ func LoadLogger() {
 	// If true, log to file
 	// else, log to console
 	if viper.GetBool("production") {
+		logAPI.SetLevel(log.InfoLevel)
 		// Log as JSON instead of the default ASCII formatter.
 		logAPI.SetFormatter(&log.JSONFormatter{})
-		// Ensure that log directory exist
-		EnsureDirectory(viper.GetString("logAddr"))
 		// Log to a file
 		// Format MM-DD-YYYY
 		file, err := os.OpenFile(viper.GetString("logAddr")+time.Now().Format("01-02-2006")+".log", os.O_CREATE|os.O_WRONLY, 0666)
@@ -30,6 +29,7 @@ func LoadLogger() {
 			logAPI.Info("Failed to log to file, using default stderr")
 		}
 	} else {
+		logAPI.SetLevel(log.TraceLevel)
 		// Log as default ASCII formatter.
 		logAPI.SetFormatter(&log.TextFormatter{})
 		// Output to stdout instead of the default stderr
