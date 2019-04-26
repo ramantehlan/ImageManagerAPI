@@ -6,10 +6,10 @@ import (
 
 // Image is the structure of a single image entry
 type Image struct {
-	ID        int    `json:"ID"`
-	Image     string `json:"Image"`
-	Thumbnail string `json:"Thumbnail"`
-	Caption   string `json:"Caption"`
+	ID        int    `json:"id"`
+	Image     string `json:"image"`
+	Thumbnail string `json:"thumbnail"`
+	Caption   string `json:"caption"`
 }
 
 // Images is the array of multiple Image
@@ -25,3 +25,11 @@ type Route struct {
 
 // Routes is the array of multiple Route
 type Routes []Route
+
+// Dir is to store single important paths for API
+type Dir struct {
+	path string
+}
+
+// Dirs is to stroe multiple paths
+type Dirs []Dir
