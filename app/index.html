@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <title>ImageManagerAPI</title>
+</head>
+<body>
+    <form action="http://0.0.0.0:8082/v1/image/upload" method="post" enctype="multipart/form-data" class="form">
+        <h2>ImageManagerAPI v1</h2>
+        <label class="form-label" for="image">
+            Image
+        </label>
+        <input class="form-input" type="file" name="image" id="image" accept="image/*">
+        <label class="form-label" for="image">
+          Caption
+        </label>
+        <textarea class="form-input" type="text" name="caption" id="caption" style="height: 60px;"></textarea>
+        <input type="submit" value="UPLOAD" class="form-submit">
+    </form>
+</body>
+</html>
