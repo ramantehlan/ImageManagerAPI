@@ -13,7 +13,7 @@ A simple API to manage images. :hash: :bridge_at_night:
   - [Pre-Requisites](#pre-requisites)
   - [Development Environment](#development-environment)
   - [File Structure](#file-structure)
-  - [How to work](#how-to-work)
+  - [How to](#how-to)
   - [Build](#build)
 - [Contribution](#contribution)
 - [Resources](#resources)
@@ -36,7 +36,8 @@ Follow steps given below to install ImageManagerAPI in your system.
 
 #### Configure
 
-1. You need to make sure that you have `MySql` server installed on your system and has the following table in any database, also make sure to add database details in the config file in next step.
+You need to make sure that you have `MySql` server installed on your system and has the following table in any database, also make sure to add database details in the config file in next step.
+
 ```sql
 CREATE TABLE images (
   id INT NOT NULL UNIQUE AUTO_INCREMENT,
@@ -48,7 +49,8 @@ CREATE TABLE images (
 );
 ```
 
-2. Now to start our API, we need to make sure that everything is configured properly. Below is the default configurations in `config.yaml`. You can make changes according to your need.
+Now to start our API, we need to make sure that everything is configured properly. Below is the default configurations in `config.yaml`. You can make changes according to your need.
+
 ```yaml
 # API Name
 name: ImageManagerAPI
@@ -120,8 +122,9 @@ sudo apt-get install mysql-server
 
 #### Development Environment
 
-To
-
+1. Fork this repo.
+2. Clone the forked repo. `$ git clone https://github.com/YOUR_USERNAME/ImageManagerAPI`
+3. Install all the dependencis. Run this command inside `src` folder. `$ go get ./...`
 
 #### File Structure
 
@@ -167,9 +170,36 @@ To
   12 | structure.go | Store all the `struct` used in the program.
   13 | util.go | Other important functions are defined here.
 
-#### How to work
+#### How to
+
+**Add Route**
+
+If you need to add more routes, just add a `Route{Name, Method, Path, Handler}` object to routes variable. For example:
+
+```go
+Route{"NewRoute", "POST", "/v1/image/{key}", CreateImage}
+```
+
+**Log**
+
+To log about different levels, you should use the function `Log(level, message)`. Log have 7 levels, which are `trace`, `debug`, `info`, `warn`,`error`,`fatal`,`panic`. For example:
+
+```go
+Log("info", "Endpoint Hit: ReadSingleImage")
+```
+
+**Connect To Database**
+
+To access database anywhere, you should use the global variable `DB`. For example:
+
+```go
+DB.Query("SELECT * FROM images")
+```
 
 #### Build
+
+The default build is for an `amd64` architecture, but if you want it for any other architecture, you can make your own build by using the command `$ go build` in `src` folder.
+
 
 ## Contribution
 
