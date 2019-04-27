@@ -38,13 +38,13 @@ func LoadLogger() {
 }
 
 // Log is to log according to the environment
-func Log(tag string, message string, fields ...log.Fields) {
+func Log(level string, message string, fields ...log.Fields) {
 	field := log.Fields{}
 	if len(fields) > 0 {
 		field = fields[0]
 	}
 	context := logAPI.WithFields(field)
-	switch tag {
+	switch level {
 	// Something very low level.
 	case "trace":
 		context.Trace(message)
