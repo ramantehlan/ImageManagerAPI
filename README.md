@@ -182,7 +182,7 @@ Route{"NewRoute", "POST", "/v1/image/{key}", CreateImage}
 
 **Log**
 
-To log about different levels, you should use the function `Log(level, message)`. Log have 7 levels, which are `trace`, `debug`, `info`, `warn`,`error`,`fatal`,`panic`. For example:
+To log about different levels, you should use the function `Log(level, message)`. Log has 7 levels, which are `trace`, `debug`, `info`, `warn`, `error`, `fatal`, `panic`. For example:
 
 ```go
 Log("info", "Endpoint Hit: ReadSingleImage")
