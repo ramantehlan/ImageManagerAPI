@@ -1,6 +1,6 @@
 # ImageManagerAPI
 
-A simple Microservice to manage images. :hash: :bridge_at_night:
+A simple API to manage images. :hash: :bridge_at_night:
 
 # Index
 
@@ -22,7 +22,7 @@ A simple Microservice to manage images. :hash: :bridge_at_night:
 
 ## About
 
-ImageManagerAPI is a simple and small example of a Microservice to manage images using an API for storing images on the server and adding them to the database. It only performs 'Post' and 'Get' so once an image is uploaded, it can't be 'Deleted' or 'Updated'. This Microservice can be controlled from a  single config file and it will also log all the activities in a log file.
+ImageManagerAPI is a simple and small example of an API for storing images on the server and adding them to the database. It only performs `Post` and `Get` so once an image is uploaded, it can't be `Deleted` or `Updated`. This API can be controlled from a  single config file and it will also log all the activities in a log file.
 
 ## Usage
 
@@ -36,8 +36,7 @@ Follow steps given below to install ImageManagerAPI in your system.
 
 #### Configure
 
-You need to make sure that you have `MySql` server installed on your system and has the following table in any database, also make sure to add database details in the config file in next step.
-
+1. You need to make sure that you have `MySql` server installed on your system and has the following table in any database, also make sure to add database details in the config file in next step.
 ```sql
 CREATE TABLE images (
   id INT NOT NULL UNIQUE AUTO_INCREMENT,
@@ -49,8 +48,7 @@ CREATE TABLE images (
 );
 ```
 
-Now to start our Microservice, we need to make sure that everything is configured properly. Below is the default configurations in `config.yaml`. You can make changes according to your need.
-
+2. Now to start our API, we need to make sure that everything is configured properly. Below is the default configurations in `config.yaml`. You can make changes according to your need.
 ```yaml
 # API Name
 name: ImageManagerAPI
@@ -82,13 +80,13 @@ server:
 
 #### Commands
 
-If you have installed and configured everything, you can start the Microservice using the build you downloaded.
+If you have installed and configured everything, you can start the API using the build you downloaded.
 
 ```console
 $ ./ImageManagerAPI
 ```
 
-Now, if you don't see any errors in your console then you can use `Postman`, `curl` or your browser to test that the API, further you can use this [ImageManagerAPI App](https://github.com/ramantehlan/ImageManagerAPI/tree/master/app). Following are the endpoints currently available:
+Now, if you don't see any errors in your console then you can use [Postman](https://www.getpostman.com/), [curl](https://curl.haxx.se/) or your browser to test that the API, further you can use this [ImageManagerAPI App](https://github.com/ramantehlan/ImageManagerAPI/tree/master/app). Following are the endpoints currently available:
 
 ```go
 {
@@ -106,10 +104,24 @@ If you are interested in adding more endpoints or in general playing with this p
 
 #### Pre-Requisites
 
+To develop and build this project, you need to have the following items installed on your system.
+
+1. **Go**
+```
+# For Debian based
+sudo apt-get install golang-go
+```
+
+2. **MySql server**  
+```
+# For Debian based
+sudo apt-get install mysql-server
+```
 
 #### Development Environment
 
-`sudo apt-get install mysql-server`
+To
+
 
 #### File Structure
 
@@ -184,7 +196,7 @@ It can't get better then this, your pull request will be really appreciated by t
 ## Gallery
 
 ![APP Frontend](https://raw.githubusercontent.com/ramantehlan/ImageManagerAPI/master/app/ss.png)
-![Microservice](https://raw.githubusercontent.com/ramantehlan/ImageManagerAPI/master/app/ss2.png)
+![API](https://raw.githubusercontent.com/ramantehlan/ImageManagerAPI/master/app/ss2.png)
 
 ## License
 
