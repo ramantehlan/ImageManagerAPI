@@ -5,7 +5,7 @@ name: ImageManagerAPI
 logAddr: log/
 # Img folder location
 # Do add '/' in the end
-imgAddr: img/ 
+imgAddr: img/
 # True if running in production
 # False if running in development
 production: false
