@@ -26,7 +26,7 @@ ImageManagerAPI is a simple and small example of an API for storing images on th
 
 ## Usage
 
-#### Installation
+### Installation
 
 Follow steps given below to install ImageManagerAPI in your system.
 
@@ -34,7 +34,7 @@ Follow steps given below to install ImageManagerAPI in your system.
 2. Download the config file from [here](https://raw.githubusercontent.com/ramantehlan/ImageManagerAPI/master/build/config.yaml).
 3. Place both the downloaded file in the same folder.
 
-#### Configure
+### Configure
 
 You need to make sure that you have `MySql` server installed on your system and has the following table in any database, also make sure to add database details in the config file in next step.
 
@@ -80,7 +80,7 @@ server:
 
 ```
 
-#### Commands
+### Commands
 
 If you have installed and configured everything, you can start the API using the build you downloaded.
 
@@ -104,7 +104,7 @@ Now, if you don't see any errors in your console then you can use [Postman](http
 
 If you are interested in adding more endpoints or in general playing with this project, you can read the following guidelines for the development.
 
-#### Pre-Requisites
+### Pre-Requisites
 
 To develop and build this project, you need to have the following items installed on your system.
 
@@ -120,13 +120,13 @@ sudo apt-get install golang-go
 sudo apt-get install mysql-server
 ```
 
-#### Development Environment
+### Development Environment
 
 1. Fork this repo.
 2. Clone the forked repo. `$ git clone https://github.com/YOUR_USERNAME/ImageManagerAPI`
 3. Install all the dependencis. Run this command inside `src` folder. `$ go get ./...`
 
-#### File Structure
+### File Structure
 
 ```console
 .
@@ -170,7 +170,7 @@ sudo apt-get install mysql-server
   12 | structure.go | Store all the `struct` used in the program.
   13 | util.go | Other important functions are defined here.
 
-#### How to
+### How to
 
 **Add Route**
 
@@ -196,7 +196,7 @@ To access database anywhere, you should use the global variable `DB`. For exampl
 DB.Query("SELECT * FROM images")
 ```
 
-#### Build
+### Build
 
 The default build is for an `amd64` architecture, but if you want it for any other architecture, you can make your own build by using the command `$ go build` in `src` folder.
 
